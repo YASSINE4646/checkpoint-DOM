@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Gourmet</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="#">Gourmet Eats</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-elements justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button onclick="isDark()"><i class="fa-solid fa-moon"></i></button>
+            </li>
+            <li class="nav-item">
+              <button id="cart" onclick="ShowCart()"> <i class="fa-solid fa-cart-shopping"></i> </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="cartDiv">
+      <h3>Cart Items</h3>
+      <ul id  ="items-list"></ul>
+      <button id="checkout" onclick="Checkout()">Checkout</button>
+       <div class="justify-content-end">
+        <span id="total">total:</span>
+        <span id="totalPrice"></span>
+        <button onclick="clearAll()">Clear Cart</button>
+       </div>
+    </section>
+
+    <section class="d-flex flex-row justify-content-around flex-wrap">
+
+      <div class="card" style="width: 18rem;">
+        <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Carrot Photo">
+        <div class="card-body">
+          <h5 class="card-title">Carrot</h5>
+          <div class="mt-5">
+            <span class="price" id="CarrotPrice">5</span> <span>per 250gm</span>
+            <br>
+            <button class="btn btn-secondary addButton">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+          <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1627022534691-b703158d3024?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" class="card-img-top" alt="Tomato photo">
+            <div class="card-body">
+              <h5 class="card-title">Tomato</h5>
+              <div class="mt-5">
+              <span class="price " id="TomatoPrice">7</span> <span>per 250gm</span>
+              <br>
+              <button class="btn btn-secondary addButton">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Potatoes photo">
+            <div class="card-body">
+              <h5 class="card-title">Potatoes</h5>
+              <div class="mt-5">
+                <span class="price" id="PotatoesPrice">2</span> <span>per 250gm</span>
+              <br>
+              <button class="btn btn-secondary addButton">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1592457765434-70aacc2da743?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Strawberry photo">
+            <div class="card-body">
+              <h5 class="card-title">Strawberry</h5>
+              <div class="mt-5">
+                <span class="price" id="StrawberryPrice">4</span> <span>per 250gm</span>
+                <br>
+                <button class="btn btn-secondary addButton">Add to Cart</button>  
+              </div>
+            </div>
+          </div>
+    
+          <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="card-img-top" alt="Mango Photo">
+            <div class="card-body">
+              <h5 class="card-title">Mango</h5>
+              <div class="mt-5">
+                <span class="price" id="MangoPrice">12</span><span>$ per 250gm</span>
+              <br>
+              <button class="btn btn-secondary addButton">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card" style="width:18rem;">
+            <img src="https://images.unsplash.com/photo-1589217157232-464b505b197f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Apple Photo">
+            <div class="card-body">
+              <h5 class="card-title">Apples</h5>
+              <div class="mt-5">
+                <span class="price" id="ApplesPrice">8</span><span>$ per 250gm</span>
+              <br>
+              <button class="btn btn-secondary addButton">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="https://www.chicagotribune.com/resizer/ck5lIvLdG052sSBIJEA2SgO5rs0=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/HFZX5TLSCVFNRPB4VYEZTY4Z5A.jpeg"card-img-top" alt="Oranges Photo">
+            <div class="card-body">
+              <h5 class="card-title">Oranges</h5>
+              <div class="mt-5">
+                <span class="price" id="OrangesPrice">5</span> <span>per 250gm</span>
+                <br>
+                <button class="btn btn-secondary addButton">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        
+              <div class="card" style="width: 18rem;">
+                <img src="https://www.chicagotribune.com/resizer/VmWQTwla1v1w7WKK4Nq-xv23G-s=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/WZSKJHZOJFGSRMNJBOEF4A2EWQ.jpeg" class="card-img-top" alt="Sweet potatoes photo">
+                <div class="card-body">
+                  <h5 class="card-title">Sweet potatoes</h5>
+                  <div class="mt-5">
+                  <span class="price " id="Sweet potatoesPrice">7</span> <span>per 250gm</span>
+                  <br>
+                  <button class="btn btn-secondary addButton">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="card" style="width: 18rem;">
+                <img src="https://www.chicagotribune.com/resizer/kVU9_V-MWpyWjuR2Rz3QleHH3cs=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/5WC7FFLPGBHERCO4CGAVFLG6JI.jpeg" class="card-img-top" alt="Onions photo">
+                <div class="card-body">
+                  <h5 class="card-title">Onions</h5>
+                  <div class="mt-5">
+                    <span class="price" id="OnionsPrice">2</span> <span>per 250gm</span>
+                  <br>
+                  <button class="btn btn-secondary addButton">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="card" style="width: 18rem;">
+                <img src="https://www.chicagotribune.com/resizer/6UHOcJ795aT5uwX2RXky_0x5efg=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/OFH3GUALLNENLOROWD2B6ZEW6Y.jpeg" class="card-img-top" alt="Watermelons photo">
+                <div class="card-body">
+                  <h5 class="card-title">Watermelons</h5>
+                  <div class="mt-5">
+                    <span class="price" id="WatermelonsPrice">4</span> <span>per 250gm</span>
+                    <br>
+                    <button class="btn btn-secondary addButton">Add to Cart</button>  
+                  </div>
+                </div>
+              </div>
+        
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1589217157315-046ac1a3fca6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Bananas Photo">
+                <div class="card-body">
+                  <h5 class="card-title">Bananas</h5>
+                  <div class="mt-5">
+                    <span class="price" id="BananasPrice">12</span><span>$ per 250gm</span>
+                  <br>
+                  <button class="btn btn-secondary addButton">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card" style="width:18rem;">
+                <img src="https://images.unsplash.com/photo-1539519532614-723937382b86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Grapes Photo">
+                <div class="card-body">
+                  <h5 class="card-title">Grapes</h5>
+                  <div class="mt-5">
+                    <span class="price" id="GrapesPrice">8</span><span>$ per 250gm</span>
+                  <br>
+                  <button class="btn btn-secondary addButton">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1628773822503-930a7eaecf80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Carrot Photo">
+                <div class="card-body">
+                  <h5 class="card-title">broccoli </h5>
+                  <div class="mt-5">
+                    <span class="price" id="broccoli Price">5</span> <span>per 250gm</span>
+                    <br>
+                    <button class="btn btn-secondary addButton">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80">
+                    <div class="card-body">
+                      <h5 class="card-title">Blueberries</h5>
+                      <div class="mt-5">
+                      <span class="price " id="BlueberriesPrice">7</span> <span>per 250gm</span>
+                      <br>
+                      <button class="btn btn-secondary addButton">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://images.unsplash.com/photo-1432457990754-c8b5f21448de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" class="card-img-top" alt="Lemons photo">
+                    <div class="card-body">
+                      <h5 class="card-title">Lemons</h5>
+                      <div class="mt-5">
+                        <span class="price" id="LemonsPrice">2</span> <span>per 250gm</span>
+                      <br>
+                      <button class="btn btn-secondary addButton">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://images.unsplash.com/photo-1532704868953-d85f24176d73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Peaches photo">
+                    <div class="card-body">
+                      <h5 class="card-title">Peaches</h5>
+                      <div class="mt-5">
+                        <span class="price" id="PeachesPrice">4</span> <span>per 250gm</span>
+                        <br>
+                        <button class="btn btn-secondary addButton">Add to Cart</button>  
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://images.unsplash.com/photo-1504545102780-26774c1bb073?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=723&q=80" class="card-img-top" alt="Mushrooms Photo">
+                    <div class="card-body">
+                      <h5 class="card-title">Mushrooms</h5>
+                      <div class="mt-5">
+                        <span class="price" id="MushroomsPrice">12</span><span>$ per 250gm</span>
+                      <br>
+                      <button class="btn btn-secondary addButton">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card" style="width:18rem;">
+                    <img src="https://images.unsplash.com/photo-1612506266679-606568a33215?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Apple Photo">
+                    <div class="card-body">
+                      <h5 class="card-title">Avocados</h5>
+                      <div class="mt-5">
+                        <span class="price" id="AvocadosPrice">8</span><span>$ per 250gm</span>
+                      <br>
+                      <button class="btn btn-secondary addButton">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+
+          </div>
+          
+    </section>
+    
+ <script src="/scripts/script.js"></script>
+</body>
+</html>
